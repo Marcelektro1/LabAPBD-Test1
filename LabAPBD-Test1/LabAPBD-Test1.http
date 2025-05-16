@@ -1,6 +1,8 @@
 @LabAPBD_Test1_HostAddress = http://localhost:5192
 
-GET {{LabAPBD_Test1_HostAddress}}/api/Weather/example
+@appointmentId = 1
+
+GET {{LabAPBD_Test1_HostAddress}}/api/Appointments/{{appointmentId}}
 Accept: application/json
 
 ###

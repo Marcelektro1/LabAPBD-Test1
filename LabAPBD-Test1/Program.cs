@@ -16,7 +16,7 @@ public static class Program
         builder.Services.AddOpenApi();
         
         // Register dependency injection
-        builder.Services.AddScoped<ISomethingService, SomethingService>();
+        builder.Services.AddScoped<IAppointmentsService, AppointmentsService>();
         
 
         var app = builder.Build();
