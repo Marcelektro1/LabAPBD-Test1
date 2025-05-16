@@ -11,7 +11,7 @@ public class AppointmentsController(IAppointmentsService appointmentsService) : 
 {
     
     [HttpGet("{id:int}")]
-    public async Task<IActionResult> GetCurrentWeather(int id)
+    public async Task<IActionResult> GetAppointmentById(int id)
     {
         AppointmentDto? res;
         try
@@ -30,7 +30,7 @@ public class AppointmentsController(IAppointmentsService appointmentsService) : 
     public async Task<IActionResult> AddAppointment([FromBody] NewAppointmentDto newAppointment)
     {
         // initial validation
-        if (newAppointment.Services == null || newAppointment.Services.Count == 0)
+        if (newAppointment.Services.Count == 0)
             return BadRequest("An appointment must have at least one service.");
         
 
@@ -51,7 +51,7 @@ public class AppointmentsController(IAppointmentsService appointmentsService) : 
             return StatusCode(500, "Could not create appointment"); // should never happen
         }
 
-        return CreatedAtAction(nameof(GetCurrentWeather), new { id = (int)createdId }, res);
+        return CreatedAtAction(nameof(GetAppointmentById), new { id = (int)createdId }, res);
 
     }
     

@@ -11,10 +11,10 @@ public class NewAppointmentDto
     public int? PatientId { get; set; }
     
     [Required]
-    public string? Pwz { get; set; }
+    public string Pwz { get; set; }
     
     [Required]
-    public List<NewAppointmentServiceDto>? Services { get; set; }
+    public List<NewAppointmentServiceDto> Services { get; set; }
     
 }
 
@@ -22,7 +22,7 @@ public class NewAppointmentDto
 public class NewAppointmentServiceDto
 {
     [Required]
-    public string? ServiceName { get; set; }
+    public string ServiceName { get; set; }
     
     [Required]
     public double? ServiceFee { get; set; }

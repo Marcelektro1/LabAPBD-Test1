@@ -167,7 +167,7 @@ public class AppointmentsService(IConfiguration configuration) : IAppointmentsSe
             command.Parameters.AddWithValue("@AppointmentId", appointmentDto.AppointmentId);
             command.Parameters.AddWithValue("@PatientId", appointmentDto.PatientId);
             command.Parameters.AddWithValue("@DoctorId", doctorId);
-            command.Parameters.AddWithValue("@Date", DateTime.UtcNow); // TODO: task didnt specify what date to use
+            command.Parameters.AddWithValue("@Date", DateTime.UtcNow); // TO/DO: task didnt specify what date to use (having asked, using date time was the way :D)
 
             var addAppAff = await command.ExecuteNonQueryAsync();
 
