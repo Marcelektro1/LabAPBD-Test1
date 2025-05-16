@@ -1,8 +1,30 @@
 @LabAPBD_Test1_HostAddress = http://localhost:5192
 
-@appointmentId = 1
+@appointmentId = 10
 
 GET {{LabAPBD_Test1_HostAddress}}/api/Appointments/{{appointmentId}}
 Accept: application/json
+
+###
+
+POST {{LabAPBD_Test1_HostAddress}}/api/Appointments
+Accept: application/json
+Content-Type: application/json
+
+{
+  "appointmentId": 10,
+  "patientId": 1,
+  "pwz": "PWZ5678",
+  "services": [
+    {
+      "serviceName": "Consultation",
+      "serviceFee": 110.00
+    },
+    {
+      "serviceName": "ECG",
+      "serviceFee": 70.00
+    }
+  ]
+}
 
 ###

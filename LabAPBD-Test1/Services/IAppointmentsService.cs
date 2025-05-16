@@ -6,4 +6,5 @@ namespace LabAPBD_Test1.Services;
 public interface IAppointmentsService
 {
     public Task<AppointmentDto> GetAppointmentDetails(int appointmentId);
+    public Task<ServiceResult> CreateAppointment(NewAppointmentDto appointmentDto);
 }
